@@ -27,7 +27,7 @@ SECRET_KEY = 's08j9-f1+b4m19tuw)b5-ptz(2u6ip&d@2nm^pd^3k-7!d18v3'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['sobremesasapp.herokuapp.com', '127.0.0.1']
 
 
 # Application definition
