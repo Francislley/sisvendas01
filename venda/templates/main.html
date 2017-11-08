@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>DinApp</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+<body>
+
+<div class="container">
+    <h2>Produtos Comprados</h2>
+    <p>Acompanhe suas compras:</p>            
+    <table class="table table-striped">
+        <thead>
+        <tr>
+            <th>Nome</th>
+            <th>Valor</th>
+            <th>Data</th>
+        </tr>
+        </thead>
+        <tbody>
+        {% for venda in vendas %}
+        <tr>
+            <td>{{venda.usuario.first_name}}</td>
+            <td>{{venda.valor}}</td>
+            <td>{{venda.data_compra}}</td>
+        </tr>
+        {% endfor %}        
+        </tbody>
+    </table>
+    </div>
+    
+</body>
+</html>
+            
