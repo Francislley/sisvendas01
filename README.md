@@ -2,12 +2,10 @@
 Sistema Python Django para controle de venda de produtos para os usuarios acompanharem suas compras e saldo.
 
 Modulos:
-CRUD de Produtos:
-CRUD de Vendas
-CRUD de Usuarios
+CRUD de Produtos, Vendas e Usuarios
 
 Login:
-Login Para Administradores
+Login Para Administradores, 
 Login para usuarios comuns
 
 Telas:
