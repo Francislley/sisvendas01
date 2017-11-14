@@ -1,9 +1,20 @@
 from django.db.models import Sum
+from django import template
+from django.contrib.humanize.templatetags.humanize import intcomma
 from venda.models import Venda
 from venda.models import Pagamento
 from django.shortcuts import render, redirect
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth import authenticate, login, logout
+
+register = template.Library()
+@register.filter
+def prepend_dollars(dollars):
+    if dollars:
+        dollars = round(float(dollars), 2)
+        return "$%s%s" % (intcomma(int(dollars)), ("%0.2f" % dollars)[-3:])
+    else:
+        return ''
 
 # Create your views here.
 def login_user(request):

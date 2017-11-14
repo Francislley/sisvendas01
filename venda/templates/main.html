@@ -1,3 +1,5 @@
+{% load humanize %}
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -7,13 +9,13 @@
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/accounting.js/0.4.1/accounting.min.js"></script>
 </head>
-<body>
+<body style="background-color:#FFEFD5">
 
-<div class="container">
-    <h2>Produtos Comprados</h2>
-    <p>Acompanhe suas compras:</p>            
-    <p>Saldo Atual: {{total_saldo}}</p>   
+<div class="container" >
+    <h2>Sobremesas Compradas</h2>
+    <h3><p class="pull-right"><strong>Debito Atual: {{total_saldo | floatformat:2 | intcomma  }}</strong></p></h3>   
     <table class="table table-striped">
         <thead>
         <tr>
@@ -26,14 +28,14 @@
         {% for venda in vendas %}
         <tr>
             <td>{{venda.usuario.first_name}}</td>
-            <td>{{venda.valor}}</td>
+            <td>{{venda.valor | floatformat:2 | intcomma  }}</td>
             <td>{{venda.data_compra}}</td>
         </tr>
         {% endfor %}        
         </tbody>
     </table>
     <hr></hr>
-    <h2>Pagamentos</h2>
+    <h2>Pagamentos Efetuados</h2>
     <table class="table table-striped">
         <thead>
         <tr>
@@ -46,7 +48,7 @@
         {% for pagamento in pagamentos %}
         <tr>
             <td>{{pagamento.usuario.first_name}}</td>
-            <td>{{pagamento.valor}}</td>
+            <td>{{pagamento.valor | floatformat:2 | intcomma  }}</td>
             <td>{{pagamento.data_pagamento}}</td>
         </tr>
         {% endfor %}        
