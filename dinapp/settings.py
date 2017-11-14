@@ -20,6 +20,7 @@ PROJECT_ROOT = os.path.dirname(os.path.abspath(__file__))
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/1.11/howto/deployment/checklist/
+HEADER = 'Sobremessas App'
 
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = 's08j9-f1+b4m19tuw)b5-ptz(2u6ip&d@2nm^pd^3k-7!d18v3'
