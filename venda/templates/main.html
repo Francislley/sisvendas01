@@ -32,6 +32,26 @@
         {% endfor %}        
         </tbody>
     </table>
+    <hr></hr>
+    <h2>Pagamentos</h2>
+    <table class="table table-striped">
+        <thead>
+        <tr>
+            <th>Nome</th>
+            <th>Valor</th>
+            <th>Data</th>
+        </tr>
+        </thead>
+        <tbody>
+        {% for pagamento in pagamentos %}
+        <tr>
+            <td>{{pagamento.usuario.first_name}}</td>
+            <td>{{pagamento.valor}}</td>
+            <td>{{pagamento.data_pagamento}}</td>
+        </tr>
+        {% endfor %}        
+        </tbody>
+    </table>
     </div>
     
 </body>

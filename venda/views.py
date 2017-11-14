@@ -17,7 +17,7 @@ def login_user(request):
             if user.is_active:
                 login(request, user)
                 return redirect('/')
-    return render(request, 'index.html', {})
+    return render(request, 'login.html', {})
 
 def calculate_total_pagamentos_to_user(request):
     valor_total = Pagamento.objects.filter(
@@ -42,5 +42,3 @@ def main(request):
             calculate_total_pagamentos_to_user(request)
         }
     return render(request, 'main.html', context)
-    
-    
